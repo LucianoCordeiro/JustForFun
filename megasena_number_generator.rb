@@ -1,4 +1,4 @@
-def self.mg
+def megasena_number_generator
   x = 1.step(60, 1).to_a
   y = x.sample(6).sort
   print "Seus números da megasena são: "
