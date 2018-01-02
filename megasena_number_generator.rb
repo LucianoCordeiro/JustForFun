@@ -10,4 +10,3 @@ for z in y
     print z.to_s + " "
   end
 end
-
