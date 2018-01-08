@@ -1,0 +1,21 @@
+<script>
+
+  function counter() {
+    count = 0;
+    return function() {return count += 1;}
+  }
+  var add = counter();
+  function mySwitch(number_of_clicks) {
+    let change = "Off";
+    if (number_of_clicks % 2 === 0) {
+      change = "<h1 style=color:red;>Off</h1>";
+    }
+    else if (number_of_clicks % 2 != 0) {
+      change = "<h1 style=color:green;>On</h1>";
+    }
+  document.getElementById('button').innerHTML = change;
+  }
+
+</script>
+
+<button id="button" type="button" onclick="mySwitch(add())"><h1 style="color:red">Off</h1></button>
