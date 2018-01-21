@@ -11,7 +11,7 @@ class Cat
   @cats = []
   
   def self.create(name, age)
-    @cats << Cat.new(@cats.size + 1, name, age)
+    @cats << new(@cats.size + 1, name, age)
   end
   
   def self.find(cat_id)
