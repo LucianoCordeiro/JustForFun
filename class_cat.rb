@@ -8,7 +8,7 @@ class Cat
     @age = age
   end
   
-  @cats ||= []
+  @cats = []
   
   def self.create(name, age)
     @cats << Cat.new(@cats.size + 1, name, age)
