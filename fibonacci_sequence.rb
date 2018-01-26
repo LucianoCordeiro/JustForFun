@@ -1,7 +1,7 @@
 def fibonacci_sequence(array_size)
   y = [0,1]
-  i = 1 
-  while i < array_size - 1
+  i = 2 
+  while i < array_size
     y << y[y.length - 2] + y[y.length - 1]
     i += 1
   end
