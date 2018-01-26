@@ -8,4 +8,4 @@ def fibonacci_sequence(array_size)
   return y
 end
 
-fibonnaci_sequence(9) # => [0, 1, 1, 2, 3, 5, 8, 13, 21]
+fibonacci_sequence(9) # => [0, 1, 1, 2, 3, 5, 8, 13, 21]
