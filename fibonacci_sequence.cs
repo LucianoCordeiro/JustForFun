@@ -13,7 +13,7 @@ class Fibonacci {
   
   public static void Main (string[] args) {
     
-    var g = Programm.FibonacciSequence(20);  
+    var g = Fibonacci.FibonacciSequence(20);  
     Console.WriteLine(string.Join(", ", g));
   }
 }
