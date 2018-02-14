@@ -1,17 +1,23 @@
-def parcel(sum, num_of_parcels)
+class Money 
   
-  parcels_array = []
-  
-  division = sum.to_f / num_of_parcels
-  
-  i = 0
-  while i < num_of_parcels
-    parcels_array[i] = division.to_s[0..3].to_f
-    i += 1
+  def initialize(currency, amount)
+    @currency = currency 
+    @amount = amount
   end
   
-  parcels_array
-  
-end 
-
-parcel(22, 7) # => [3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14]
+  def parcel(parcels_count)
+    
+    i_array = []
+    div = @amount.to_f / parcels_count
+    div_floor = (div * 100).floor / 100.0
+    i_array = (i_array << div_floor) * parcels_count
+    i_array[0] = (div_floor + (div - div_floor) * parcels_count).round(2)
+    
+    f_array = []
+    i_array.each do |p|
+      p.to_s.split('.')[1].size == 2 ? f_array << "#{p.to_s} #{@currency}" : f_array << "#{p.to_s}0 #{@currency}"
+    end
+      
+    f_array
+  end 
+end
