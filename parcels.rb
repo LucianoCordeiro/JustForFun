@@ -17,6 +17,7 @@ class Money
     i_array.each do |p|
       p.to_s.split('.')[1].size == 2 ? f_array << "#{p.to_s} #{@currency}" : f_array << "#{p.to_s}0 #{@currency}"
     end
-   
+    
+    f.array
   end 
 end
