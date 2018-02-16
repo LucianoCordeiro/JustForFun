@@ -13,11 +13,7 @@ class Money
     i_array = (i_array << div_floor) * parcels_count
     i_array[0] = (div_floor + (div - div_floor) * parcels_count).round(2)
     
-    f_array = []
-    i_array.each do |p|
-      p.to_s.split('.')[1].size == 2 ? f_array << "#{p.to_s} #{@currency}" : f_array << "#{p.to_s}0 #{@currency}"
-    end
+    i_array.map { |p| p.to_s.split('.')[1].size == 2 ? "#{p.to_s} #{@currency}" : "#{p.to_s}0 #{@currency}"}
     
-    f.array
   end 
 end
