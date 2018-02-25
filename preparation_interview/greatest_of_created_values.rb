@@ -7,7 +7,7 @@ class Value_Collection
     @@arr << num
     valmax = @@arr[0]
     @@arr.each {|a| valmax = a if valmax < a}
-    return @@arr
+    return valmax
     
   end
 end
