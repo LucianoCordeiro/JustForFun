@@ -1,9 +1,9 @@
 def count(string, char)
-  arr_char = []
+  i = 0
   string.each_char do |m|
-    arr_char << m if m == char
+    i += 1 if m == char
   end
-  return arr_char.size 
+  return i
 end
 
 def first_single_character(str)
