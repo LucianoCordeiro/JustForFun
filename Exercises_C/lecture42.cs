@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 
-
 namespace ConsoleApp1
 {
     class Program
@@ -63,16 +62,7 @@ namespace ConsoleApp1
                 else
                     Console.WriteLine("You got {0} points. License suspended", points);
                 
-            }
-          
-
-    
-
-
-    
-            
-
-
+            }   
         }
     }
 }
