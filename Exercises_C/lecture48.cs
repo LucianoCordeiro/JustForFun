@@ -63,9 +63,9 @@ var input = Console.ReadLine();
 var numbers = input.Replace(" ", "").Split(',');
 
 var max_value = Convert.ToInt32(numbers[0]);
-    for(var i = 0; i < numbers.Length; i++) {
-        var number = Convert.ToInt32(numbers[i]);
-        if (number > max_value)
-            max_value = number; 
-    }
+for(var i = 0; i < numbers.Length; i++) {
+    var number = Convert.ToInt32(numbers[i]);
+    if (number > max_value)
+        max_value = number; 
+}
 Console.WriteLine (max_value);   
