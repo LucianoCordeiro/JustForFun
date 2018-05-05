@@ -3,9 +3,8 @@ class Social_Network
     @@users ||= []
   end
   
-  def self.posts
-    @@posts ||= []
-  end
+  @@posts = []
+  
 end
 
 class User < Social_Network
@@ -19,19 +18,29 @@ class User < Social_Network
     users << User.new(users.size + 1, name)
   end
   
+  def self.find(id)
+    users[id - 1]
+  end
+  
+  def self.count 
+    users.size
+  end
+  
   def posts
     user_posts = []
-    posts.each do |post|
-      if post[:user_id] == @id
-        user_posts << post 
-      end 
-    end 
+    i = 0 
+    while i < @@posts.size
+      user_posts << @@posts[i] if @id - 1 == i
+      i += 1
+    end
+    return user_posts
   end
       
 end
 
 class Post < Social_Network
-  attr_accessor :title, :body
+  attr_accessor :title, :body 
+  attr_reader :user
   def initialize(id, title, body, user_id)
     @id = id
     @title = title 
@@ -41,12 +50,15 @@ class Post < Social_Network
   end
   
   def self.create(title, body, user_id) 
-    posts << Post.new(posts.size + 1, title, body, user_id)
+    @@posts << Post.new(@@posts.size + 1, title, body, user_id)
+  end
+  
+  def self.find(id)
+    @@posts[id - 1]
+  end
+  
+  def self.count 
+    @@posts.size
   end
   
 end
-
-x = User.create("Mario")
-x = User.create("Luci")
-Social_Network.users
-#Post.create("ndajnd", "dnand", 1)
