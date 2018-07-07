@@ -22,12 +22,13 @@ parents["a"] = "begin"
 parents["b"] = "begin"
 parents["finish"] = nil
 
-processed = []
+PROCESSED = []
 $lowest_cost = "a"
 
 def lowest_cost(costs)
+  
   costs.each do |key, value|
-    if value < costs[$lowest_cost]
+    if value < costs[$lowest_cost] || !PROCESSED.include?(key)
       $lowest_cost = key
       return $lowest_cost
     end 
@@ -46,9 +47,13 @@ while node != nil
       parents[key] = node
     end
   end
-  processed << node
-  puts costs["finish"]
-  puts costs["a"]
-  puts costs["b"]
+  PROCESSED << node
   node = lowest_cost(costs)
 end
+
+  puts costs["a"]
+  puts costs["b"]
+  puts costs["finish"]
+  puts parents["a"]
+  puts parents["b"] 
+  puts parents["finish"]
