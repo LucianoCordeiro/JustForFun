@@ -1,10 +1,10 @@
 #!/bin/sh
 
-NUMBEROFLINES="$(wc -l <  /home/admin/web/facebook.justsell.com.br/public_html/webhook/comparison.txt)"
+NUMBEROFLINES="$(wc -l <  /path/to/file)"
 LIMIT=400
 DIFF=$(( $NUMBEROFLINES - $LIMIT ))
 
 if [ $NUMBEROFLINES  -gt 400 ]
         then
-                sed -i "1,${DIFF}d"  /home/admin/web/facebook.justsell.com.br/public_html/webhook/comparison.txt
+                sed -i "1,${DIFF}d"  /path/to/file
 fi
